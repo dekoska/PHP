@@ -1,8 +1,8 @@
 <?php
-$arr[0]="jeden";
-$arr[1]="dwa";
-$zdanie='Jeden kot to nie dwa koty';
-Str_ireplace($arr[0],'*',$zdanie);
-Str_ireplace($arr[1],'*',$zdanie);
-echo "$zdanie";
+$arr=array("jeden","dwa");
+$sentence='jeden kot to nie dwa koty';
+$false=[$arr[0],$arr[1]];
+$change=['*','*'];
+$newsentence=str_replace($false,$change,$sentence);
+echo $newsentence;
 
