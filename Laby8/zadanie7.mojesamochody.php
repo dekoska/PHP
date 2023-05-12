@@ -1,11 +1,11 @@
 <?php
 include "zadanie7.php";
 session_start();
-$current_user_id=$_SESSION["current_user_id"];
-$current_user_login=$_SESSION["current_user_login"];
+$current_user_id=$_SESSION['current_user_id'];
+$current_user_login=$_SESSION['current_user_login'];
 if(isset($current_user_login) && isset($current_user_id)){
     $db_connection = mysqli_connect("localhost", "root", "", "mojaBaza");
-    if($current_user_login=="admin"){
+    if($current_user_login=='admin'){
         $query = "SELECT * FROM samochody";
     }
     else {
@@ -27,7 +27,7 @@ if(isset($current_user_login) && isset($current_user_id)){
         echo "<td>Opis: </td>";
         echo "</tr>";
         while ($row = mysqli_fetch_array($result)) {
-            echo "<form action='zadanie7.edytuj.php' method='get'>";
+            echo "<form action='zadanie7.edycja.php' method='get'>";
             echo "<tr>";
             echo "<td><input type='submit' name='id' value='{$row["id"]}'></td>";
             echo "<td>{$row["marka"]}</td>";
@@ -40,4 +40,5 @@ if(isset($current_user_login) && isset($current_user_id)){
         }
         echo "</table>";
     }
+    mysqli_close($db_connection);
 }

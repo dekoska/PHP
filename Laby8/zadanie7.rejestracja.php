@@ -27,7 +27,7 @@ $haslo_hash = password_hash($haslo, PASSWORD_DEFAULT);
         <td><input type="haslo" name="haslo" placeholder="Hasło" required></td>
     </tr>
     <tr>
-        <td><input type="submit" name="submit" value="Wyślij"></td>
+        <td><input type="submit" name="submit" value="Zarejestuj się"></td>
     </tr>
     </table>
 </form>
@@ -47,9 +47,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
             exit();
         }
         else {
-            echo "Rejestracja przebiegła pomyślnie";
+            echo "Rejestracja przebiegła pomyślnie, proszę się zalogować";
             exit();
         }
     }
 }
+mysqli_close($db_connection);
 ?>

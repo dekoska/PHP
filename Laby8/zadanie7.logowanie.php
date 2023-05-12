@@ -26,7 +26,7 @@ if(isset($_POST["login"]) && isset($_POST["haslo"])) {
         <td><input type="haslo" name="haslo" placeholder="Hasło" required></td>
     </tr>
     <tr>
-        <td><input type="submit" name="submit" value="Wyślij"></td>
+        <td><input type="submit" name="submit" value="Zaloguj się"></td>
     </tr>
     </table>
 </form>
@@ -39,15 +39,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
         exit();
     } else {
         $query_login = mysqli_query($db_connection, "SELECT * FROM uzytkownik WHERE login ='$login'");
-        $query= mysqli_query($db_connection, "SELECT * FROM uzytkownik");
-        $row=mysqli_fetch_array($query);
         if (mysqli_num_rows($query_login) > 0) {
             $record = mysqli_fetch_assoc($query_login);
             $hash=$record["haslo_hash"];
             if (password_verify($haslo, $hash)) {
                 session_start();
-                $_SESSION['current_user_id'] =$row["id"] ;
-                $_SESSION['current_user_login']=$row["login"];
+                $_SESSION['current_user_id'] =$record["id"] ;
+                $_SESSION['current_user_login']=$record["login"];
                 echo "Zalogowano pomyślnie";
 
             }
@@ -55,5 +53,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
         }
     }
 }
+mysqli_close($db_connection);
 
 ?>

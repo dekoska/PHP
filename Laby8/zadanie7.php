@@ -6,15 +6,6 @@
 </head>
 <body>
 
-<?php
-session_start();
-$db_connection = mysqli_connect("localhost", "root", "", "mojaBaza");
-if (!$db_connection) {
-    echo "<h2>Błąd połączenia z bazą!</h2>";
-    exit();
-}
-?>
-
 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
     <table>
         <tr>
@@ -22,9 +13,14 @@ if (!$db_connection) {
             <td><a href="zadanie7.wszystkie.php">Wszystkie samochody</a></td>
             <td><a href="zadanie7.dodawanie.php">Dodaj samochód</a></td>
             <?php
-            if(isset($_SESSION["current_user_id"]) && isset($_SESSION["current_user_login"]))
-                echo "<td><a href=\"zadanie7.mojesamochody.php\">Moje samochody<a/></td>";
+            if(isset($_SESSION['current_user_login']) && isset($_SESSION['current_user_id'])) {
+                echo "<td><a href='zadanie7.mojesamochody.php'>Moje samochody<a/></td>";
+                echo "<td><a href='zadanie7.wylogowanie.php.php'>Wyloguj się<a/></td>";
+                }
+
             ?>
+            <td><a href='zadanie7.mojesamochody.php'>Moje samochody<a/></td>
+            <td><a href='zadanie7.wylogowanie.php'>Wyloguj się<a/></td>
             <td><a href="zadanie7.logowanie.php">Logowanie</a></td>
         </tr>
     </table>

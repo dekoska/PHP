@@ -47,7 +47,7 @@ if(isset($_GET['make']) && isset($_GET['model']) && isset($_GET['price']) && iss
             <td><input type="text" name="description"></td>
     </tr>
         <tr>
-            <td><input type="submit" value="Wyślij"</td>
+            <td><input type="submit" value="Dodaj samochód"</td>
         </tr>
     </table>
 </form>
@@ -75,12 +75,13 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
                     exit();
                 }
                 else {
-                    echo "Dodawanie auta przebiegło pomyślnie";
+                    echo "Dodawanie samochodu przebiegło pomyślnie";
                     exit();
                 }
         }
     }
 }
+mysqli_close($db_connection);
 ?>
 
 </body>

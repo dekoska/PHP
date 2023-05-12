@@ -30,3 +30,4 @@ else {
     }
     echo "</table>";
 }
+mysqli_close($db_connection);
