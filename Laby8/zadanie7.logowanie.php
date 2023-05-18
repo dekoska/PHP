@@ -43,7 +43,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST") {
             $record = mysqli_fetch_assoc($query_login);
             $hash=$record["haslo_hash"];
             if (password_verify($haslo, $hash)) {
-                session_start();
                 $_SESSION['current_user_id'] =$record["id"] ;
                 $_SESSION['current_user_login']=$record["login"];
                 echo "Zalogowano pomyślnie";

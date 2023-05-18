@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "zadanie7.php";
 $id=$_GET['id'];
 $db_connection = mysqli_connect("localhost", "root", "", "mojaBaza");
@@ -62,7 +61,7 @@ if(isset($_GET['make']) && isset($_GET['model']) && isset($_GET['price']) && iss
             if (isset($_GET['make']) && isset($_GET['model']) && isset($_GET['price']) && isset($_GET['year']) && isset($_GET['description'])) {
                 $db_connection = mysqli_connect("localhost", "root", "", "mojaBaza");
                 $current_user = $_SESSION['current_user'];
-                $query = "UPDATE samochody SET marka='$make', model='$model', cena='$price', rok='$year', opis='$description' WHERE id='$id';";
+                $query = "UPDATE samochody SET marka='$make', model='$model', cena='$price', rok='$year', opis='$description' WHERE id='{$id}';";
                 if (!$db_connection) {
                     echo "<h2>Błąd połączenia z bazą!</h2>";
                     exit();

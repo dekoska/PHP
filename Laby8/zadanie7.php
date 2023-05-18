@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +23,6 @@
                 }
 
             ?>
-            <td><a href='zadanie7.mojesamochody.php'>Moje samochody<a/></td>
-            <td><a href='zadanie7.wylogowanie.php'>Wyloguj się<a/></td>
             <td><a href="zadanie7.logowanie.php">Logowanie</a></td>
         </tr>
     </table>

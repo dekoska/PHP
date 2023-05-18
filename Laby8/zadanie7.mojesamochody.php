@@ -1,6 +1,5 @@
 <?php
 include "zadanie7.php";
-session_start();
 $current_user_id=$_SESSION['current_user_id'];
 $current_user_login=$_SESSION['current_user_login'];
 if(isset($current_user_login) && isset($current_user_id)){
