@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    background: beige;
+    font-family: 'Bree Serif', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bree Serif', sans-serif;
+    color: black;
+    margin: 5px;
+}
+
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+/*zakładka*/
+
+header {
+    background: burlywood;
+    height:66px;
+}
+
+ header * {
+    color: black;
+}
+
+ header .logo {
+     float: left;
+     height: inherit;
+     margin-left: 2em;
+ }
+
+ header .logo-text {
+     margin: 14px;
+     font-family: 'Bree Serif', sans-serif;
+ }
+
+ header .logo-text span {
+     color: saddlebrown;
+
+ }
+
+ header ul {
+     float: right;
+     margin: 0px;
+     padding: 0px;
+     list-style: none;
+ }
+
+ header ul li {
+     float: left;
+     position: relative;
+ }
+
+ header ul li ul {
+     position: absolute;
+     top: 66px;
+     right: 0px;
+     width: 180px;
+     display: none;
+     z-index: 888888;
+
+ }
+
+ header ul li:hover ul {
+     display: block;
+ }
+
+ header ul li ul li {
+     width: 100%;
+ }
+
+ header ul li ul li a {
+     padding:  5px;
+     background: white;
+     color: black;
+ }
+
+
+ header ul li ul li a:hover {
+     background: #b4a485;
+ }
+
+ header ul li a {
+     display: block;
+     padding: 21px;
+     font-size: 1.1em;
+     text-decoration: none;
+ }
+
+ header ul li a:hover{
+     background: saddlebrown;
+     transition: 0.5s;
+ }
+
+ header .menu-toggle{
+     display: none;
+ }
+
+ /*strona główna*/
+
+
+ .post-slider {
+     position: relative;
+ }
+
+ .post-slider .next {
+     position: absolute;
+     top: 50%;
+     right: 30px;
+     font-size: 2em;
+     color: saddlebrown;
+     cursor: pointer;
+ }
+
+.post-slider .prev {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 2em;
+    color: saddlebrown;
+    cursor: pointer;
+}
+
+ .post-slider .slider-title {
+     text-align: center;
+     margin: 30px auto;
+ }
+ .post-slider .post-wrapper {
+     width: 84%;
+     height: 350px;
+     margin: 0px auto;
+     overflow: hidden;
+     padding: 10px 0px 10px 0px;
+    border: 1px red;
+ }
+
+.post-slider .post-wrapper .post {
+    background: #b4a485;
+    display: inline-block;
+    width: 300px;
+    height:330px;
+    margin: 0px 10px;
+    border-radius: 5px;
+}
+
+.post-slider .post-wrapper .post .post-info {
+    height: 130px;
+    padding: 0px 5px;
+}
+
+.post-slider .post-wrapper .post .slider-image {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/*konkretny post*/
+
+ .main-content.konkretnypost{
+     padding: 20px 50px;
+     font-size: 1.1em;
+     border: 1px solid black;
+     background: white;
+     margin: 30px auto;
+     width: 50%;
+     border-radius: 5px;
+
+}
+
+ .main-content.konkretnypost .post-title{
+     text-align: center;
+     margin-bottom: 40px ;
+ }
+
+ .main-content.konkretnypost .post-content{
+     text-align: center;
+ }
+
+ .main-content.konkretnypost .post-content .slider-image{
+     width: 100%;
+     height: 100%;
+     border-radius: 5px;
+     border: 1px solid black;
+ }
+
+.main-content.konkretnypost .post-content .tytul-komentarza{
+    font-weight: 900;
+}
+
+ .main-content.konkretnypost .komentarz{
+     border: 1px solid black;
+     border-radius: 5px;
+ }
+
+.main-content.konkretnypost .komentarz .komentarz-content {
+    margin: 10px 20px 10px 20px;
+}
+
+.main-content.konkretnypost .komentarz .komentarz-content .komentarz-tresc{
+    margin: 10px 20px 10px 20px;
+}
+
+/*formularz kontaktowy*/
+
+.kontakt-autor {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border: 1px solid black;
+    background: white;
+    margin: 150px auto;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.kontakt-autor .tytul{
+    text-align: center;
+}
+
+/*logowanie*/
+
+.logowanie {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border: 1px solid black;
+    background: white;
+    margin: 150px auto;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.logowanie .link{
+    color: #b4a485;
+}
+
+.logowanie .formularz{
+    margin: 20px 20px 20px 20px;
+}
+
+/*rejestracja*/
+
+.rejestracja {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border: 1px solid black;
+    background: white;
+    margin: 100px auto;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.rejestracja .link{
+    color: #b4a485;
+}
+
+.rejestracja .formularz{
+    margin: 20px 20px 20px 20px;
+}
+
+.dodawanie-postu {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border: 1px solid black;
+    background: white;
+    margin: 150px auto;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.dodawanie-postu .tresc{
+    margin: 10px;
+}
+
+.mojeposty {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border: 1px solid black;
+    background: white;
+    margin: 50px auto;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.mojeposty .post{
+    border: 1px solid black;
+    margin: 15px;
+    border-radius: 5px;
+}
+
+.mojeposty .post .tresc{
+    margin: 10px;
+}
+
+.mojprofil {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border: 1px solid black;
+    background: white;
+    margin: 200px auto;
+    width: 25%;
+    border-radius: 5px;
+}
+
+.zmien-haslo {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border: 1px solid black;
+    background: white;
+    margin: 150px auto;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.reset {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border: 1px solid black;
+    background: white;
+    margin: 150px auto;
+    width: 30%;
+    border-radius: 5px;
+}
